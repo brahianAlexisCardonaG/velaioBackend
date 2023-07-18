@@ -45,6 +45,10 @@ public class MedicamentoService {
         return medicamentoRepository.findByNombre(nombre);
     }
 
+    public List<Medicamento> getMedicamentoByLaboratorio(String laboratorioFabrica){
+        return medicamentoRepository.findByLaboratorioFabrica(laboratorioFabrica);
+    }
+
     @Transactional
     public void restarStock(Long id, Long discountStock) {
         Optional<Medicamento> idMedicamento = medicamentoRepository.findById(id);

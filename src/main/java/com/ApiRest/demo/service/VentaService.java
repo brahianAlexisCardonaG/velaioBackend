@@ -40,4 +40,8 @@ public class VentaService {
         return ventaRepository.findAll(sort);
     }
 
+    public List<Venta> listarVentaByFecha(String fecha){
+        return ventaRepository.findByFecha(fecha);
+    }
+
 }

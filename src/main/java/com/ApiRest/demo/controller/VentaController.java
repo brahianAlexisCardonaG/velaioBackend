@@ -39,4 +39,9 @@ public class VentaController {
     public List<Venta> ListarVentas() {
         return ventaService.listarVenta();
     }
+
+    @GetMapping(value = "listarFecha/{fecha}", headers = "Accept=application/json")
+    public List<Venta> ListarVentasByFecha(@PathVariable String fecha) {
+        return ventaService.listarVentaByFecha(fecha);
+    }
 }
