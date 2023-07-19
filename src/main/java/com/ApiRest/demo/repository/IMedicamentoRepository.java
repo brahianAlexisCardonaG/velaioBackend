@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface IMedicamentoRepository extends JpaRepository <Medicamento, Long> {
 
-    List<Medicamento> findByNombre(String nombre);
+    List<Medicamento> findByNombreContaining(String nombre);
     List<Medicamento> findByLaboratorioFabrica(String laboratorioFabrica);
 
 }

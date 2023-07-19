@@ -49,7 +49,7 @@ public class MedicamentoController {
         return medicamentoService.getMedicamentoByNombre(nombre);
     }
 
-    @GetMapping(value = "listarNombre/{laboratorioFabrica}", headers = "Accept=application/json")
+    @GetMapping(value = "listarLaboratorio/{laboratorioFabrica}", headers = "Accept=application/json")
     public List<Medicamento> listarMedicamentosByLaboratorio(@PathVariable String laboratorioFabrica){
         return medicamentoService.getMedicamentoByLaboratorio(laboratorioFabrica);
     }

@@ -42,7 +42,7 @@ public class MedicamentoService {
     }
 
     public List<Medicamento> getMedicamentoByNombre(String nombre){
-        return medicamentoRepository.findByNombre(nombre);
+        return medicamentoRepository.findByNombreContaining(nombre);
     }
 
     public List<Medicamento> getMedicamentoByLaboratorio(String laboratorioFabrica){
