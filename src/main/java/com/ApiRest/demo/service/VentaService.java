@@ -41,7 +41,7 @@ public class VentaService {
     }
 
     public List<Venta> listarVentaByFecha(String fecha){
-        return ventaRepository.findByFecha(fecha);
+        return ventaRepository.findByFechaContaining(fecha);
     }
 
 }

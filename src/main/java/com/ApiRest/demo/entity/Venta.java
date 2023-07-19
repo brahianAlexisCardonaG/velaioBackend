@@ -20,9 +20,11 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "id_medicamento")
-    private Medicamento medicamento;
+    @Column(name = "id_medicamento")
+    private Long idMedicamento;
+
+    @Column(name = "nombre_medicamento")
+    private String nombreMedicamento;
 
     private String fecha;
 

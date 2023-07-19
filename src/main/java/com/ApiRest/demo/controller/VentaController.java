@@ -24,11 +24,11 @@ public class VentaController {
         this.medicamentoService = medicamentoService;
     }
 
-    @PostMapping(value = "crear", headers = "Accept=application/json")
-    public ResponseEntity<String> crearVenta(@RequestBody Venta venta ){
+    @PostMapping(value = "crear/{idMedicamento}", headers = "Accept=application/json")
+    public ResponseEntity<String> crearVenta(@PathVariable Long idMedicamento, @RequestBody Venta venta ){
         try{
             ventaService.createdVenta(venta);
-            medicamentoService.restarStock(venta.getMedicamento().getId(),venta.getCantidad());
+            medicamentoService.restarStock(idMedicamento, venta.getCantidad());
             return ResponseEntity.status(HttpStatus.CREATED).body("ok");
         }catch (RuntimeException e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
